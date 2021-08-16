@@ -18,15 +18,18 @@ const Theme = {
      } else {
       bodyBg.classList.add(Theme.LIGHT);
       bodyBg.classList.remove(Theme.DARK);
-          localStorage.removeItem("theme");
           localStorage.setItem("theme", Theme.LIGHT);
      }
 
 }
 
-const changeLocalBgColor = localStorage.getItem("theme");
-if (changeLocalBgColor === Theme.DARK) {
-  sliderSwitch.checked = true;
+function currentTheme(){
+
+if (localStorage.getItem("theme") === Theme.DARK) {
+  return sliderSwitch.checked = 'true',
     bodyBg.classList.add(Theme.DARK);
+}
 
 }
+
+currentTheme()
